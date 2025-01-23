@@ -35,6 +35,6 @@ public class BaseEntity {
 
     @PreUpdate
     private void modificationAt() {
-        dateModified = LocalDateTime.now()
+        dateModified = LocalDateTime.now();
     }
 }
