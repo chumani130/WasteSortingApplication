@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class DisposalGuideRepository extends JpaRepository<DisposalGuideEntity, Long> {
+public interface DisposalGuideRepository extends JpaRepository<DisposalGuideEntity, Long> {
 }
