@@ -4,8 +4,7 @@ import com.enviro.enviro.assessment.grad001.chumanimadikizela.entity.DisposalGui
 
 import java.util.List;
 
-public class DisposalGuideService {
-
+public interface DisposalGuideService {
     DisposalGuideEntity save(DisposalGuideEntity disposalGuideEntity);
     List<DisposalGuideEntity> findAll();
     DisposalGuideEntity findById(Long id);
