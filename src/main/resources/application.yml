@@ -1,0 +1,14 @@
+# spring.application.name=WasteSortingApplication
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:wastedb
+    username: sa
+    password:
+    driverClaName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
