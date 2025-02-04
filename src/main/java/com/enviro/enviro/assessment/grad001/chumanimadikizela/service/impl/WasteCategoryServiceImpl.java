@@ -1,7 +1,6 @@
 package com.enviro.enviro.assessment.grad001.chumanimadikizela.service.impl;
 
 import com.enviro.enviro.assessment.grad001.chumanimadikizela.entity.WasteCategoryEntity;
-import com.enviro.enviro.assessment.grad001.chumanimadikizela.exceptions.NotFoundException;
 import com.enviro.enviro.assessment.grad001.chumanimadikizela.repository.WasteCategoryRepository;
 import com.enviro.enviro.assessment.grad001.chumanimadikizela.service.WasteCategoryService;
 import lombok.AllArgsConstructor;
@@ -23,8 +22,12 @@ public class WasteCategoryServiceImpl implements WasteCategoryService {
     @Override
     public WasteCategoryEntity update(WasteCategoryEntity wasteCategoryEntity) {
         WasteCategoryEntity dbWasteCategory = findById(wasteCategoryEntity.getId());
-        dbWasteCategory.setCategory(wasteCategoryEntity.getCategory());
-        return save(dbWasteCategory);
+        if (dbWasteCategory != null) {
+            dbWasteCategory.setCategory(wasteCategoryEntity.getCategory());
+            dbWasteCategory.setDescription(wasteCategoryEntity.getDescription());
+            return wasteCategoryRepository.save(dbWasteCategory);
+        }
+        return null;
     }
 
     @Override
@@ -34,8 +37,7 @@ public class WasteCategoryServiceImpl implements WasteCategoryService {
 
     @Override
     public WasteCategoryEntity findById(Long id) {
-        return wasteCategoryRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Could not find the waste category"));
+        return wasteCategoryRepository.findById(id).orElse(null);
     }
 
     @Override

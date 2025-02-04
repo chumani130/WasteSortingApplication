@@ -7,6 +7,7 @@ import java.util.List;
 public interface RecyclingTipsService {
 
     RecyclingTipsEntity save(RecyclingTipsEntity recyclingTipsEntity);
+    RecyclingTipsEntity update(RecyclingTipsEntity recyclingTipsEntity);
     List<RecyclingTipsEntity> findAll();
     RecyclingTipsEntity findById(Long id);
     void deleteById(Long id);

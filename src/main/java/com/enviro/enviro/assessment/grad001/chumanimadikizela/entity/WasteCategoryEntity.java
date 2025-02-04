@@ -1,12 +1,18 @@
 package com.enviro.enviro.assessment.grad001.chumanimadikizela.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name = "waste-categories")
 public class WasteCategoryEntity extends BaseEntity {
 
     @Column(name = "category", nullable = false)
@@ -15,9 +21,4 @@ public class WasteCategoryEntity extends BaseEntity {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "wasteCategory", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DisposalGuideEntity> disposalGuides = new ArrayList<>();
-
-    @OneToMany(mappedBy = "wasteCategory", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RecyclingTipsEntity> recyclingTips = new ArrayList<>();
 }

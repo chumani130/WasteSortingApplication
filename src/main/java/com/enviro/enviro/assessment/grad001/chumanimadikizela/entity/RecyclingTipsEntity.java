@@ -18,7 +18,4 @@ public class RecyclingTipsEntity extends BaseEntity {
     @Column(name = "source")
     private String source;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "waste_category_id", nullable = false)
-    private WasteCategoryEntity wasteCategory;
 }

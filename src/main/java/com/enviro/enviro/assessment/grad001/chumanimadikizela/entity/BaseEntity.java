@@ -12,8 +12,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @MappedSuperclass
-@NoArgsConstructor
-@AllArgsConstructor
 public class BaseEntity {
 
     @Id
