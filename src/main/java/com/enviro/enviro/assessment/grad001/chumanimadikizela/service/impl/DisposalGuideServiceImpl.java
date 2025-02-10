@@ -19,7 +19,7 @@ public class DisposalGuideServiceImpl implements DisposalGuideService {
     }
 
     @Override
-    public DisposalGuideEntity update(DisposalGuideEntity disposalGuideEntity) {
+    public DisposalGuideEntity update(Long id, DisposalGuideEntity disposalGuideEntity) {
         DisposalGuideEntity existingEntity = findById(disposalGuideEntity.getId());
         if (existingEntity != null) {
             existingEntity.setGuideline(disposalGuideEntity.getGuideline());
