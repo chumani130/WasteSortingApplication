@@ -2,6 +2,7 @@ package com.enviro.enviro.assessment.grad001.chumanimadikizela.controller;
 
 import com.enviro.enviro.assessment.grad001.chumanimadikizela.entity.DisposalGuideEntity;
 import com.enviro.enviro.assessment.grad001.chumanimadikizela.service.DisposalGuideService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +18,9 @@ public class DisposalGuideController {
     }
 
     @PostMapping
-    public DisposalGuideEntity createDisposalGuide(@RequestBody DisposalGuideEntity guideline) {
-        return disposalGuideService.save(guideline);
+    public ResponseEntity<DisposalGuideEntity> createDisposalGuide(@RequestBody DisposalGuideEntity guideline) {
+        DisposalGuideEntity createDisposalGuide = disposalGuideService.save(guideline);
+        return ResponseEntity.ok(createDisposalGuide);
     }
 
     @GetMapping
@@ -33,8 +35,7 @@ public class DisposalGuideController {
 
     @PutMapping("/{id}")
     public DisposalGuideEntity updateGuide(@PathVariable Long id, @RequestBody DisposalGuideEntity guide) {
-//        guide.setId(id);
-        return disposalGuideService.update(guide);
+        return disposalGuideService.update(id, guide);
     }
 
     @DeleteMapping("/{id}")
