@@ -35,7 +35,6 @@ public class WasteCategoryController {
 
     @PutMapping("/{id}")
     public WasteCategoryEntity updateWasteCategory(@PathVariable Long id, @RequestBody WasteCategoryEntity wasteCategoryEntity) {
-        wasteCategoryEntity.setId(id);
         return wasteCategoryService.update(wasteCategoryEntity);
     }
 
