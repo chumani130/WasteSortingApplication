@@ -7,7 +7,7 @@ import java.util.List;
 public interface DisposalGuideService {
 
     DisposalGuideEntity save(DisposalGuideEntity disposalGuideEntity);
-    DisposalGuideEntity update(DisposalGuideEntity disposalGuideEntity);
+    DisposalGuideEntity update(Long id, DisposalGuideEntity disposalGuideEntity);
     List<DisposalGuideEntity> findAll();
     DisposalGuideEntity findById(Long id);
     void deleteById(Long id);
