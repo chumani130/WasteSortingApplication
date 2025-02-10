@@ -37,7 +37,6 @@ public class RecyclingTipsController {
 
     @PutMapping("/{id}")
     public RecyclingTipsEntity updateRecyclingTip(@PathVariable Long id, @RequestBody RecyclingTipsEntity recyclingTipsEntity) {
-        recyclingTipsEntity.setId(id);
         return recyclingTipsService.update(recyclingTipsEntity);
     }
 
